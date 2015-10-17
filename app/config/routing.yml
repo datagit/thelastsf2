@@ -1,3 +1,51 @@
+dao_data_source:
+    resource: "@DaoDataSourceBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+dao_backend:
+    resource: "@DaoBackendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+dao_frontend:
+    resource: "@DaoFrontendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+dao_api:
+    resource: "@DaoApiBundle/Controller/"
+    type:     annotation
+    prefix:   /api
+
+pages:
+    type:     rest
+    resource: Dao\ApiBundle\Controller\PageController
+
+dao_dev:
+    resource: "@DaoDevBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+# fos_user
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# easy_admin_bundle
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+# resize image: https://github.com/liip/LiipImagineBundle
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+# api doc
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

@@ -1,0 +1,129 @@
+#sdocument: https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    site_name: My Easy Admin
+    entities:
+        User: 
+            label: 'Users'
+            class: Dao\DataSourceBundle\Entity\User
+            list:
+                title: "User list"
+                fields: ['id', 'username', 'email', 'lastLogin', 'enabled', 'locked']
+                actions: ['-show']
+            form:
+                fields:
+                    - { property: 'username' }
+                    - { property: 'email', type: 'email' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', help: 'Passwords must have at least 8 characters' }
+                    - { property: 'enabled', type: 'checkbox' }
+                    - { property: 'locked', type: 'checkbox' }
+
+        #customer entity
+#        Customer:
+#            class: Dao\DataSourceBundle\Entity\Customer
+#            list:
+#                fields:
+#                    - user
+#                    - name
+#                    - { property: 'logo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/images/customers/' }
+#                    - email
+#                    - createdAt
+#                actions:
+#                    - { name: 'show', icon: 'search', label: false }
+#                    - { name: 'edit', icon: 'pencil', label: false }
+#            show:
+#                fields:
+#                    - user
+#                    - name
+#                    - { property: 'logo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/images/customers/' }
+#                    - firstName
+#                    - lastName
+#                    - email
+#                    - phone
+#                    - companyName
+#                    - website
+#            form:
+#                fields:
+#                    - user
+#                    - name
+#                    - { property: 'logoFile', type: 'file', label: 'Upload logo', help: 'Select file to upload / change logo' }
+#                    - firstName
+#                    - lastname
+#                    - { property: 'email', type: 'email' }
+#                    - phone
+#                    - companyName
+#                    - website
+        #post entity
+        Post:
+            class: Dao\DataSourceBundle\Entity\Post
+            list:
+                fields:
+                    - id
+                    - title
+                    - { property: 'photo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/uploads/posts/' }
+                    - slug
+                    - summary
+                    - tags
+                    - publishedAt
+                    - authorEmail
+                    - updatedAt
+                    - createdAt
+                actions:
+                    - { name: 'show', icon: 'search', label: false }
+                    - { name: 'edit', icon: 'pencil', label: false }
+                    #https://github.com/javiereguiluz/EasyAdminBundle/blob/master/Resources/doc/tutorials/customizing-backend-actions.md
+                    - { name: 'restock', type: 'method' }
+            show:
+                fields:
+                    - id
+                    - title
+                    - { property: 'photo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/uploads/posts/' }
+                    - slug
+                    - { property: 'summary', type: 'textarea' }
+                    - { property: 'content', type: 'textarea' }
+                    - tags
+                    - publishedAt
+                    - authorEmail
+                    - updatedAt
+                    - createdAt
+            form:
+                fields:
+                    - title
+                    - { property: 'summary', type: 'textarea' }
+                    - { property: 'content', type: 'textarea' }
+                    - tags
+                    - { property: 'photoFile', type: 'file', label: 'Upload photo', help: 'Select file to upload / change photo' }
+                    - authorEmail
+                    - publishedAt
+        #Comment entity
+        Comment:
+            class: Dao\DataSourceBundle\Entity\Comment
+            list:
+                fields:
+                    - id
+                    - post
+                    #- { property: 'logo', type: 'image', base_path: 'http://localhost/sf2-easyadmin/web/images/customers/' }
+                    - content
+                    - authorEmail
+                    - publishedAt
+                    - updatedAt
+                    - createdAt
+                actions:
+                    - { name: 'show', icon: 'search', label: false }
+                    - { name: 'edit', icon: 'pencil', label: false }
+            show:
+                fields:
+                    - id
+                    - post
+                    #- { property: 'logo', type: 'image', base_path: 'http://localhost/sf2-easyadmin/web/images/customers/' }
+                    - content
+                    - authorEmail
+                    - publishedAt
+                    - updatedAt
+                    - createdAt
+            form:
+                fields:
+                    - post
+                    - content
+                    #- { property: 'logoFile', type: 'file', label: 'Upload logo', help: 'Select file to upload / change logo' }
+                    - authorEmail
+                    - publishedAt

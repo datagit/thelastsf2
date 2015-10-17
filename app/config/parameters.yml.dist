@@ -1,19 +1,31 @@
 # This file is a "template" of what your parameters.yml file should look like
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+
 parameters:
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: null
     # You should uncomment this if you want use pdo_sqlite
-    # database_path: "%kernel.root_dir%/data.db3"
+        # database_path: "%kernel.root_dir%/data.db3"
 
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
+    #config for sender email
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
 
+    #http://nux.net/secret
     # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret: df17b05f9ec490d92e8a36f0765bf50cf04bbe56
+
+    #LswApiCallerBundle
+    api_caller.options:
+        timeout: 10 # maximum transport + execution duration of the call in sec.
+        ssl_verifypeer: false # to stop cURL from verifying the peer's certificate.
+        useragent: "LeaseWeb API Caller" # contents of the "User-Agent: " header.
+        followlocation: true # to follow any "Location: " header that the server sends.
+        sslversion: 3 # set to 3 to avoid any bugs that relate to automatic version selection.
+        fresh_connect: false # set to true to force full reconnect every call.
