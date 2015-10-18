@@ -29,7 +29,8 @@
         "vich/uploader-bundle": "^0.14.0",
         "cocur/slugify": "dev-master",
         "liip/imagine-bundle": "dev-master",
-        "doctrine/doctrine-fixtures-bundle": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "raulfraile/ladybug-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

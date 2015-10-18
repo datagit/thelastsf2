@@ -56,5 +56,10 @@ ed EasyAdminBundle--------------------
 
 FrontendBundle:
 st FrontendBundle---------------------
+debug code:
+https://github.com/raulfraile/LadybugBundle
 
+
+http://kipalog.com/posts
+http://jquery-spellchecker.badsyntax.co/ckeditor.html
 ed FrontendBundle---------------------

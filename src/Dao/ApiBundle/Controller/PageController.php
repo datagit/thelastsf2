@@ -42,7 +42,7 @@ class PageController extends FOSRestController {
 
         $entities = $em->getRepository('DaoApiBundle:Page')->findAll();
 
-        throw new HttpException(400, "New comment is not valid.");
+        //throw new HttpException(400, "New comment is not valid.");
 
         $statusCode = 200;
 
@@ -63,7 +63,7 @@ class PageController extends FOSRestController {
      *     200 = "Returned when successful",
      *     404 = "Returned when the page is not found"
      *   }
-     * )
+     * )//
      *
      */
     public function getAction(Request $request, $id)

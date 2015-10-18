@@ -1,6 +1,6 @@
 # /src/Dao/ApiBundle/Resources/config/routes.yml
-dao_api_Page:
-    type: rest
-    prefix: /v1
-    resource: "Dao\ApiBundle\Controller\PageController"
-    name_prefix:  api_1_ # naming collision
+#dao_api_Page:
+#    type: rest
+#    prefix: /v1
+#    resource: "Dao\ApiBundle\Controller\PageController"
+#    name_prefix:  api_1_ # naming collision

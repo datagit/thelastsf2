@@ -47,4 +47,12 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $manager->persist($user);
         $manager->flush();
     }
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 1; // the order in which fixtures will be loaded
+    }
+
 }

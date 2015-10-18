@@ -16,11 +16,8 @@ dao_frontend:
 dao_api:
     resource: "@DaoApiBundle/Controller/"
     type:     annotation
-    prefix:   /api
+    prefix:   /api/v1
 
-pages:
-    type:     rest
-    resource: Dao\ApiBundle\Controller\PageController
 
 dao_dev:
     resource: "@DaoDevBundle/Controller/"
@@ -49,3 +46,7 @@ _liip_imagine:
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+# resize image
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
