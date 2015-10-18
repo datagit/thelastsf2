@@ -37,6 +37,7 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
 
             # frontend
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
 
 
         );

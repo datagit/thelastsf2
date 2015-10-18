@@ -58,6 +58,8 @@ FrontendBundle:
 st FrontendBundle---------------------
 debug code:
 https://github.com/raulfraile/LadybugBundle
+Extra Form : Captcha GD, Tinymce, Recaptcha, JQueryDate, JQueryAutocomplete, JQuerySlider, JQueryFile, JQueryImage
+https://github.com/genemu/GenemuFormBundle
 
 
 http://kipalog.com/posts

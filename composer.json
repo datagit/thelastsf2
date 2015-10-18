@@ -30,7 +30,8 @@
         "cocur/slugify": "dev-master",
         "liip/imagine-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "raulfraile/ladybug-bundle": "~1.0"
+        "raulfraile/ladybug-bundle": "~1.0",
+        "genemu/form-bundle": "2.2.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

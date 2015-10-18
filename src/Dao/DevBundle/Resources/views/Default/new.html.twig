@@ -1,3 +1,5 @@
+{# app/Resources/views/default/new.html.twig #}
+{% extends '::base.html.twig' %}
 {% block stylesheets %}
     <link href="{{ asset('css/ui-lightness/jquery-ui-1.8.16.custom.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/uploadify/uploadify.css') }}" rel="stylesheet" />
@@ -23,10 +25,13 @@
 {% endblock %}
 
 {% block body %}
-    <form action="{{ path('my_route_form') }}" type="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
 
-        <input type="submit" />
-    </form>
-{% endblock %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    {#<form action="{{ path('my_route_form') }}" type="post" {{ form_enctype(form) }}>#}
+        {#{{ form_widget(form) }}#}
+
+        {#<input type="submit" />#}
+    {#</form>#}
 {% endblock %}
