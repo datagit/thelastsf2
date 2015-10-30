@@ -43,13 +43,13 @@ class LoadData implements FixtureInterface, ContainerAwareInterface
         // use the factory to create a Faker\Generator instance
         $faker = \Faker\Factory::create();
 
-        $this->loadPost($manager, $faker);
+        $this->loadPost($manager, $faker, 100);
     }
 
-    private function loadPost(ObjectManager $manager, \Faker\Generator $faker) {
+    private function loadPost(ObjectManager $manager, \Faker\Generator $faker, $totalRecord) {
         $slugify = new Slugify();
 
-        for($i = 0; $i < 100; $i++) {
+        for($i = 0; $i < $totalRecord; $i++) {
             $post = new Post();
             $post->setContent($faker->text());
             $post->setAuthorEmail($faker->email);
