@@ -1,3 +1,8 @@
+# path: ~/.bash_aliases
+alias rm='rm -i'
+alias sf2Dev='php app/console --env=dev'
+alias sf2Prod='php app/console --env=prod'
+
 
 http://symfony.com/blog/the-30-most-useful-symfony-bundles-and-making-them-even-better
 

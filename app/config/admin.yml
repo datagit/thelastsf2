@@ -59,7 +59,7 @@ easy_admin:
                 fields:
                     - id
                     - title
-                    - { property: 'photo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/uploads/posts/' }
+                    - { property: 'photo', type: 'image', base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/' }
                     - slug
                     - summary
                     - tags
@@ -76,7 +76,7 @@ easy_admin:
                 fields:
                     - id
                     - title
-                    - { property: 'photo', type: 'image', base_path: 'http://localhost/dev/thelastsf2/web/uploads/posts/' }
+                    - { property: 'photo', type: 'image', base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/' }
                     - slug
                     - { property: 'summary', type: 'textarea' }
                     - { property: 'content', type: 'textarea' }
