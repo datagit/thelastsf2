@@ -5,14 +5,28 @@ easy_admin:
         date:     'd/m/Y'
         time:     'H:i'
         datetime: 'F j, Y H:i'
+    list:
+        max_results: 20
+    design:
+        form_theme: 'vertical'
+        # this backend uses turquoise as its main color
+        brand_color: 'rgba(26, 188, 156, 0.85)'
     entities:
         User:
-            disabled_actions: ['delete', 'edit', 'restock']
+            # disabled_actions: ['delete', 'edit', 'restock']
             label: 'User Web Master'
             class: Dao\DataSourceBundle\Entity\User
+            search:
+                fields: ['id', 'username', 'email', 'lastLogin', 'enabled', 'locked']
             list:
                 title: "User list"
-                fields: ['id', 'username', 'email', 'lastLogin', 'enabled', 'locked']
+                fields:
+                    - id
+                    - username
+                    - email
+                    - lastLogin
+                    - { property: 'enabled', type: 'boolean' }
+                    - { property: 'locked', type: 'boolean' }
                 actions: ['-show']
             form:
                 fields:
@@ -63,6 +77,8 @@ easy_admin:
         Post:
             label: 'Article Store'
             class: Dao\DataSourceBundle\Entity\Post
+            search:
+                fields: ['id', 'title', 'slug', 'tags', 'authorEmail', 'publishedAt', 'updatedAt', 'createdAt']
             # image_base_path: 'http://static.acme.org/img/'
             image_base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/'
             list:
@@ -114,7 +130,7 @@ easy_admin:
                     - id
                     - post
                     #- { property: 'logo', type: 'image', base_path: 'http://localhost/sf2-easyadmin/web/images/customers/' }
-                    - content
+                    - comment
                     - authorEmail
                     - { property: 'publishedAt', format: 'F j, Y' }
                     - updatedAt
@@ -127,15 +143,16 @@ easy_admin:
                     - id
                     - post
                     #- { property: 'logo', type: 'image', base_path: 'http://localhost/sf2-easyadmin/web/images/customers/' }
-                    - content
+                    - comment
                     - authorEmail
                     - publishedAt
                     - updatedAt
                     - createdAt
             form:
+                form_options: { validation_groups: ['Default', 'my_validation_group'] }
                 fields:
                     - post
-                    - content
+                    - { property: 'comment', type: 'textarea', label: 'Comment', class: 'none_tinymce' }
                     #- { property: 'logoFile', type: 'file', label: 'Upload logo', help: 'Select file to upload / change logo' }
                     - authorEmail
                     - publishedAt

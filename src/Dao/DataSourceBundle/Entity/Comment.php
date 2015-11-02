@@ -44,7 +44,7 @@ class Comment
     private $post;
 
     /**
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="comment", type="text")
      * @Assert\NotBlank(message="comment.blank")
      * @Assert\Length(
      *     min = "5",
@@ -53,7 +53,7 @@ class Comment
      *     maxMessage = "comment.too_long"
      * )
      */
-    private $content;
+    private $comment;
 
     /**
      * @ORM\Column(name="author_email", type="string")
@@ -92,7 +92,7 @@ class Comment
      */
     public function isLegitComment()
     {
-        $containsInvalidCharacters = false !== strpos($this->content, '@');
+        $containsInvalidCharacters = false !== strpos($this->comment, '@');
 
         return !$containsInvalidCharacters;
     }
@@ -102,13 +102,13 @@ class Comment
         return $this->id;
     }
 
-    public function getContent()
+    public function getComment()
     {
-        return $this->content;
+        return $this->comment;
     }
-    public function setContent($content)
+    public function setComment($comment)
     {
-        $this->content = $content;
+        $this->comment = $comment;
     }
 
     public function getAuthorEmail()
