@@ -29,9 +29,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Comment
 {
     /**
-     * @ORM\Column(type="guid")
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="bigint")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="UUID")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 

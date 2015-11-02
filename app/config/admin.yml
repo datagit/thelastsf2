@@ -1,6 +1,10 @@
 #sdocument: https://github.com/javiereguiluz/EasyAdminBundle
 easy_admin:
     site_name: My Easy Admin
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'F j, Y H:i'
     entities:
         User:
             disabled_actions: ['delete', 'edit', 'restock']
@@ -54,32 +58,35 @@ easy_admin:
 #                    - companyName
 #                    - website
         #post entity
+        # https://github.com/javiereguiluz/EasyAdminBundle/blob/master/Resources/doc/getting-started/4-views-and-actions.md
+        # https://github.com/javiereguiluz/EasyAdminBundle/blob/master/Resources/doc/tutorials/customizing-backend-actions.md
         Post:
             label: 'Article Store'
             class: Dao\DataSourceBundle\Entity\Post
+            # image_base_path: 'http://static.acme.org/img/'
+            image_base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/'
             list:
                 title: 'Article List'
                 fields:
                     - id
                     - title
-                    - { property: 'photo', type: 'image', base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/' }
+                    - { property: 'photo', type: 'image' }
                     - slug
                     #- summary
                     - tags
-                    - publishedAt
+                    - { property: 'publishedAt', format: 'F j, Y' }
                     - authorEmail
                     - updatedAt
                     - createdAt
                 actions:
                     - { name: 'show', icon: 'search', label: false }
                     - { name: 'edit', icon: 'pencil', label: false }
-                    #https://github.com/javiereguiluz/EasyAdminBundle/blob/master/Resources/doc/tutorials/customizing-backend-actions.md
                     - { name: 'restock', type: 'method' }
             show:
                 fields:
                     - id
                     - title
-                    - { property: 'photo', type: 'image', base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/' }
+                    - { property: 'photo', type: 'image' }
                     - slug
                     - { property: 'summary', type: 'textarea' }
                     - { property: 'content', type: 'textarea' }
@@ -109,7 +116,7 @@ easy_admin:
                     #- { property: 'logo', type: 'image', base_path: 'http://localhost/sf2-easyadmin/web/images/customers/' }
                     - content
                     - authorEmail
-                    - publishedAt
+                    - { property: 'publishedAt', format: 'F j, Y' }
                     - updatedAt
                     - createdAt
                 actions:

@@ -49,10 +49,10 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
 
         //guest
         $guest = new User();
-        $guest->setUsername('u1');
-        $guest->setEmail('u1@gmail.com');
+        $guest->setUsername('guest');
+        $guest->setEmail('guest@gmail.com');
         $guest->setPlainPassword('123456');
-        $guest->setRoles(array('ROLE_USER'));
+        $guest->setRoles(array('ROLE_GUEST'));
         $guest->setEnabled(true);
 
         $encoder = $this->container
@@ -62,6 +62,23 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $guest->setPassword($encoder->encodePassword('secret', $guest->getSalt()));
 
         $manager->persist($guest);
+
+        //user
+        $user = new User();
+        $user->setUsername('user');
+        $user->setEmail('user@gmail.com');
+        $user->setPlainPassword('123456');
+        $user->setRoles(array('ROLE_USER'));
+        $user->setEnabled(true);
+
+        $encoder = $this->container
+            ->get('security.encoder_factory')
+            ->getEncoder($user)
+        ;
+        $guest->setPassword($encoder->encodePassword('secret', $user->getSalt()));
+
+        $manager->persist($user);
+
         $manager->flush();
     }
     /**
