@@ -17,6 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoadData implements FixtureInterface, ContainerAwareInterface
 {
+    public static $DedaultLocale = array('en_US', 'ja_JP');
+
     /**
      * @var ContainerInterface
      */
@@ -48,12 +50,11 @@ class LoadData implements FixtureInterface, ContainerAwareInterface
 
     private function loadPost(ObjectManager $manager, \Faker\Generator $faker, $totalRecord) {
         $slugify = new Slugify();
-
         for($i = 0; $i < $totalRecord; $i++) {
             $post = new Post();
-            $post->setContent($faker->text());
+            $post->setContent($faker->sentence(rand(6,20)));
             $post->setAuthorEmail($faker->email);
-            $title = $faker->word;
+            $title = $faker->sentence(rand(1,3));
             $post->setTitle($title);
             $post->setSlug($slugify->slugify($title));
             $post->setTags($faker->word);

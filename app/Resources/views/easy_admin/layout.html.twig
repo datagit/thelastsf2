@@ -115,16 +115,32 @@
 
         {#st add code ckeditor for: http://ckeditor.com/download#}
         {#<script src="//cdn.ckeditor.com/4.5.4/standard/ckeditor.js"></script>#}
-        <script src="//cdn.ckeditor.com/4.5.4/full/ckeditor.js"></script>
-        <script src="http://ckeditor.com/ckeditor_4.3_beta/adapters/jquery.js"></script>
+        {#<script src="//cdn.ckeditor.com/4.5.4/full/ckeditor.js"></script>#}
+        {#<script src="http://ckeditor.com/ckeditor_4.3_beta/adapters/jquery.js"></script>#}
 
-        <script>
-            $( document ).ready( function() {
-                $( 'textarea#form_content' ).ckeditor();
-            } );
+        {#<script>#}
+            {#$( document ).ready( function() {#}
+                {#$( 'textarea#form_content' ).ckeditor();#}
+            {#} );#}
 
-        </script>
+        {#</script>#}
         {#ed add code ckeditor for: http://ckeditor.com/download#}
+        {#st add code tinymce#}
+        <script type="text/javascript" src="{{ asset('bundles/daodatasource/js/tinymce/tinymce.min.js') }}"></script>
+        <script type="text/javascript">
+            tinymce.init({
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste imagetools"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+        </script>
+        {#ed add code tinymce#}
+
+
 
     {% endblock body_javascript %}
 

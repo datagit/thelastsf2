@@ -2,7 +2,8 @@
 easy_admin:
     site_name: My Easy Admin
     entities:
-        User: 
+        User:
+            disabled_actions: ['delete', 'edit', 'restock']
             label: 'Users'
             class: Dao\DataSourceBundle\Entity\User
             list:
@@ -61,7 +62,7 @@ easy_admin:
                     - title
                     - { property: 'photo', type: 'image', base_path: 'http://localhost/my/thelastsf2/web/uploads/posts/' }
                     - slug
-                    - summary
+                    #- summary
                     - tags
                     - publishedAt
                     - authorEmail

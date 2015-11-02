@@ -69,4 +69,5 @@ https://github.com/genemu/GenemuFormBundle
 
 http://kipalog.com/posts
 http://jquery-spellchecker.badsyntax.co/ckeditor.html
+http://www.tinymce.com/tryit/custom_formats.php
 ed FrontendBundle---------------------
