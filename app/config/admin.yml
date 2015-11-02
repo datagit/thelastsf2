@@ -4,7 +4,7 @@ easy_admin:
     entities:
         User:
             disabled_actions: ['delete', 'edit', 'restock']
-            label: 'Users'
+            label: 'User Web Master'
             class: Dao\DataSourceBundle\Entity\User
             list:
                 title: "User list"
@@ -55,8 +55,10 @@ easy_admin:
 #                    - website
         #post entity
         Post:
+            label: 'Article Store'
             class: Dao\DataSourceBundle\Entity\Post
             list:
+                title: 'Article List'
                 fields:
                     - id
                     - title
@@ -97,8 +99,10 @@ easy_admin:
                     - publishedAt
         #Comment entity
         Comment:
+            label: 'User Comment'
             class: Dao\DataSourceBundle\Entity\Comment
             list:
+                title: 'Comment List'
                 fields:
                     - id
                     - post
